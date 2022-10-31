@@ -1,0 +1,284 @@
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* browser reset by https://piccalil.li/blog/a-modern-css-reset */
+/* box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* a elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* custom properties */
+:root {
+  --header-height: 3rem;
+
+  --clr-hue: 250; /* https://www.w3schools.com/colors/colors_hsl.asp */
+
+  --clr-primary-1: hsl(var(--clr-hue), 69%, 61%);
+  --clr-primary-2: hsl(var(--clr-hue), 69%, 61%);
+  --clr-primary-3: hsl(var(--clr-hue), 57%, 53%);
+  --clr-primary-4: hsl(var(--clr-hue), 92%, 85%);
+
+  --clr-neutral-1: hsl(var(--clr-hue), 8%, 15%);
+  --clr-neutral-2: hsl(var(--clr-hue), 8%, 45%);
+  --clr-neutral-3: hsl(var(--clr-hue), 8%, 65%);
+  --clr-neutral-4: hsl(var(--clr-hue), 70%, 96%);
+  --clr-neutral-5: hsl(var(--clr-hue), 60%, 99%);
+
+  --clr-title: var(--clr-neutral-1);
+  --clr-text: var(--clr-neutral-2);
+  --clr-text-light: var(--clr-neutral-3);
+  --clr-body: var(--clr-neutral-5);
+  --clr-input: var(--clr-neutral-4);
+  --clr-container: #fff;
+
+  --ff-primary: 'Poppins', sans-serif;
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  /* 0.5rem = 8px, 1rem = 16px, 1.5rem = 24px, 2rem = 32px, 2.5rem = 40px, 3rem = 48px, ... */
+  --fs-200: 0.75rem; /* 12px */
+  --fs-300: 0.8125rem; /* 13px */
+  --fs-400: 0.9375rem; /* 15px */
+  --fs-500: 1.125rem; /* 18px */
+  --fs-600: 1.25rem; /* 20px */
+  --fs-700: 1.5rem; /* 24px */
+  --fs-800: 2rem; /* 32px */
+  --fs-900: 3rem; /* 48px */
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+@media screen and (min-width: 60.5em) {
+  :root {
+    /* 0.5rem = 8px, 1rem = 16px, 1.5rem = 24px, 2rem = 32px, 2.5rem = 40px, 3rem = 48px, ... */
+    --fs-200: 0.8125rem; /* 13px */
+    --fs-300: 0.875rem; /* 14px */
+    --fs-400: 1rem; /* 16px */
+    --fs-500: 1.25rem; /* 20px */
+    --fs-600: 1.5rem; /* 24px */
+    --fs-700: 2.25rem; /* 36px */
+    --fs-800: 3rem; /* 48px */
+    --fs-900: 3.5rem; /* 56px */
+  }
+}
+
+/* global styles */
+body {
+  margin: 0 0 var(--header-height) 0;
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  background-color: var(--clr-body);
+  color: var(--clr-text);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--clr-title);
+  font-weight: var(--fw-semi-bold);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* utility classes */
+
+.container {
+  max-width: 768px;
+  margin-left: var(--mb-1-5);
+  margin-right: var(--mb-1-5);
+}
+
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.section__title {
+  font-size: var(--fs-700);
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--fs-300);
+  margin-bottom: var(--mb-3);
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--clr-body);
+}
+
+.nav {
+  max-width: 968px;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* the actual css */
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+/* header */
+
+.nav__toggle {
+  font-size: var(--fs-500);
+}
+
+.nav__logo,
+.nav__toggle {
+  color: var(--clr-title);
+  font-weight: var(--fw-medium);
+}
+
+.nav__logo:hover,
+.nav__logo:focus-visible,
+.nav__toggle:hover,
+.nav__toggle:focus-visible,
+.nav__link:hover,
+.nav__link:focus-visible {
+  color: var(--clr-primary-1);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 47.9375em) {
+  .nav__menu {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--clr-body);
+    padding: 2rem 1.5rem 4rem;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 1.5rem 1.5rem 0 0;
+    transition: 0.3s;
+  }
+}
+
+.nav__list {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--fs-300);
+  color: var(--clr-title);
+  font-weight: var(--fw-medium);
+}
+
+.nav__icon {
+  font-size: var(--fs-600);
+}
+
+.nav__close {
+  position: absolute;
+  right: 1.3rem;
+  bottom: 0.5rem;
+  font-size: var(--fs-700);
+  cursor: pointer;
+  color: var(--clr-primary-1);
+}
+
+.nav__close:hover,
+.nav__icon:focus-within {
+  color: var(--clr-primary-3);
+}
+
+.show-menu {
+  bottom: 0;
+}
+
+/* keyframes */
