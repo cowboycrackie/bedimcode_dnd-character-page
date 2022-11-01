@@ -23,6 +23,7 @@ ol[role='list'] {
 }
 
 /* set core root defaults */
+html,
 html:focus-within {
   scroll-behavior: smooth;
 }
@@ -152,6 +153,18 @@ h3,
 h4 {
   color: var(--clr-title);
   font-weight: var(--fw-semi-bold);
+}
+
+h1 {
+  font-size: var(--fs-700);
+}
+
+h2 {
+  font-size: var(--fs-600);
+}
+
+h3 {
+  font-size: var(--fs-500);
 }
 
 a {
@@ -336,6 +349,8 @@ a {
 .home__blob {
   width: 200px;
   fill: var(--clr-primary-1);
+  margin: 0 auto;
+  transform: scale(1.5);
 }
 
 .home__blob-img {
@@ -432,6 +447,130 @@ a {
 .about__buttons a {
   display: flex;
   justify-content: center;
+}
+
+/* skills */
+.skills__container {
+  row-gap: 0;
+}
+
+.skills__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--mb-2-5);
+  cursor: pointer;
+}
+
+.skills__icon,
+.skills__arrow {
+  font-size: var(--fs-800);
+  color: var(--clr-primary-1);
+}
+
+.skills__icon {
+  margin-right: var(--mb-0-75);
+}
+
+.skills__title {
+  font-size: var(--fs-500);
+}
+
+.skills__subtitle {
+  font-size: var(--fs-300);
+  color: var(--clr-text-light);
+}
+
+.skills__arrow {
+  margin-left: auto;
+  transition: 0.4s ease;
+}
+
+.skills__titles {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--mb-0-5);
+}
+
+.skills__name {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-medium);
+}
+
+.skills__bar,
+.skills__percentage {
+  height: 5px;
+  border-radius: 0.25rem;
+}
+
+.skills__bar {
+  width: 100%;
+  background-color: var(--clr-primary-4);
+}
+
+.skills__percentage {
+  display: block;
+  background-color: var(--clr-primary-1);
+}
+
+.skills__html {
+  width: 90%;
+}
+
+.skills__css {
+  width: 80%;
+}
+
+.skills__js {
+  width: 60%;
+}
+
+.skills__react {
+  width: 90%;
+}
+
+.skills__figma {
+  width: 80%;
+}
+
+.skills__nodejs {
+  width: 80%;
+}
+
+.skills__firebase {
+  width: 60%;
+}
+
+.skills__python {
+  width: 80%;
+}
+
+.skills__figma {
+  width: 80%;
+}
+
+.skills__sketch {
+  width: 80%;
+}
+
+.skills__photoshop {
+  width: 60%;
+}
+
+.skills__close .skills__list {
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.skills__open .skills__list {
+  height: max-content;
+  margin-bottom: var(--mb-2-5);
+  transition: 0.3s ease;
+}
+
+.skills__open .skills__arrow {
+  transform: rotate(-180deg);
+  transition: 0.3s ease;
 }
 
 /* keyframes */
