@@ -389,4 +389,49 @@ a {
   font-size: var(--fs-600);
 }
 
+/* about */
+.about__img {
+  width: 250px;
+  border-radius: 0.5rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.about__description {
+  text-align: center;
+  margin-bottom: var(--mb-2-5);
+}
+
+.about__info {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: var(--mb-2-5);
+}
+
+.about__info-title {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-neutral-1);
+}
+
+.about__info-name {
+  font-size: var(--fs-200);
+}
+
+.about__info-title,
+.about__info-name {
+  display: block;
+  text-align: center;
+}
+
+.about__buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.about__buttons a {
+  display: flex;
+  justify-content: center;
+}
+
 /* keyframes */
