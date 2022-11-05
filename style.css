@@ -557,19 +557,27 @@ a {
 }
 
 .skills__close .skills__list {
+  transform: scaleY(0);
   height: 0;
+  transform-origin: top;
   overflow: hidden;
   transition: 0.3s ease;
 }
 
 .skills__open .skills__list {
+  transform: scaleY(1);
   height: max-content;
+  transform-origin: top;
   margin-bottom: var(--mb-2-5);
   transition: 0.3s ease;
 }
 
 .skills__open .skills__arrow {
   transform: rotate(-180deg);
+  transition: 0.3s ease;
+}
+
+.skills__content {
   transition: 0.3s ease;
 }
 
