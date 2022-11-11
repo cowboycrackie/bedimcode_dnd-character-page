@@ -255,6 +255,18 @@ a {
   color: var(--clr-primary-3);
 }
 
+.button--white {
+  background-color: var(--clr-neutral-5);
+  color: var(--clr-primary-1);
+  transition: 0.3s;
+}
+
+.button--white:hover {
+  background-color: transparent;
+  color: var(--clr-neutral-5);
+  box-shadow: 0px 0px 0px 2px var(--clr-neutral-5) inset;
+}
+
 /* the actual css */
 
 .section__title,
@@ -829,6 +841,35 @@ a {
 .swiper-button-next,
 .swiper-pagination-bullet {
   outline: none;
+}
+
+/* project */
+.project {
+  text-align: center;
+}
+
+.project__bg {
+  background-color: var(--clr-primary-2);
+  padding-top: 3rem;
+}
+
+.project__title {
+  font-size: var(--fs-600);
+  margin-bottom: var(--mb-0-75);
+}
+
+.project__description {
+  margin-bottom: var(--mb-1-5);
+}
+
+.project__title,
+.project__description {
+  color: var(--clr-neutral-5);
+}
+
+.project__img {
+  width: 232px;
+  justify-self: center;
 }
 
 /* keyframes */
