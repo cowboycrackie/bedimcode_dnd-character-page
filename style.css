@@ -928,12 +928,56 @@ a {
   color: var(--clr-primary-1);
 }
 
-.testimonial__container {
-  margin-bottom: var(--mb-3);
-}
-
 .swiper .swiper-pagination-testimonial {
   bottom: 0;
+}
+
+/* contact */
+.contact__container {
+  row-gap: 3rem;
+}
+
+.contact__information {
+  display: flex;
+  margin-bottom: var(--mb-2);
+}
+
+.contact__icon {
+  font-size: var(--fs-700);
+  color: var(--clr-primary-1);
+  margin-right: var(--mb-0-75);
+}
+
+.contact__title {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-medium);
+}
+
+.contact__subtitle {
+  font-size: var(--fs-300);
+  color: var(--clr-neutral-3);
+}
+
+.contact__content {
+  background-color: var(--clr-neutral-4);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem 0.25rem;
+}
+
+.contact__input {
+  width: 100%;
+  background-color: var(--clr-neutral-4);
+  color: var(--clr-neutral-2);
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  border: none;
+  outline: none;
+  padding: 0.75rem 1rem 0.25rem 0;
+}
+
+.contact__label {
+  font-size: var(--fs-200);
+  color: var(--clr-neutral-1);
 }
 
 /* keyframes */

@@ -119,5 +119,3 @@ let swiperTestimonial = new Swiper('.testimonial__container', {
     },
   },
 });
-
-swiper - pagination - testimonial;
