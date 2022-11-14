@@ -84,6 +84,7 @@ svg {
   --clr-neutral-3: hsl(var(--clr-hue), 8%, 65%); /* text color light */
   --clr-neutral-4: hsl(var(--clr-hue), 70%, 96%); /* input color */
   --clr-neutral-5: hsl(var(--clr-hue), 60%, 99%); /* body color */
+  --clr-neutral-6: hsl(var(--clr-hue), 60%, 99%); /* text color white */
 
   --clr-title: var(--clr-neutral-1);
   --clr-text: var(--clr-neutral-2);
@@ -138,6 +139,23 @@ svg {
   }
 }
 
+/* dark theme variables */
+body.dark-theme {
+  --clr-primary-2: hsl(var(--clr-hue), 30%, 8%); /* first color second */
+
+  --clr-neutral-1: hsl(var(--clr-hue), 8%, 95%); /* title color */
+  --clr-neutral-2: hsl(var(--clr-hue), 8%, 75%); /* text color */
+  --clr-neutral-4: hsl(var(--clr-hue), 29%, 16%); /* input color */
+  --clr-neutral-5: hsl(var(--clr-hue), 28%, 12%); /* body color */
+
+  --clr-title: var(--clr-neutral-1);
+  --clr-text: var(--clr-neutral-2);
+  --clr-text-light: var(--clr-neutral-3);
+  --clr-body: var(--clr-neutral-5);
+  --clr-input: var(--clr-neutral-4);
+  --clr-container: hsl(var(--clr-hue), 29%, 16%);
+}
+
 /* global styles */
 body {
   margin: 0 0 var(--header-height) 0;
@@ -177,7 +195,6 @@ textarea {
 }
 
 /* utility classes */
-
 .container {
   max-width: 768px;
   margin-left: var(--mb-1-5);
@@ -223,7 +240,7 @@ textarea {
 .button {
   display: inline-block;
   background-color: var(--clr-primary-1);
-  color: var(--clr-neutral-5);
+  color: var(--clr-neutral-6);
   padding: 1rem;
   border-radius: 0.5rem;
   font-weight: var(--fw-medium);
@@ -261,19 +278,25 @@ textarea {
 }
 
 .button--white {
-  background-color: var(--clr-neutral-5);
+  background-color: var(--clr-neutral-6);
   color: var(--clr-primary-1);
   transition: 0.3s;
 }
 
 .button--white:hover {
   background-color: transparent;
-  color: var(--clr-neutral-5);
-  box-shadow: 0px 0px 0px 2px var(--clr-neutral-5) inset;
+  color: var(--clr-neutral-6);
+  box-shadow: 0px 0px 0px 2px var(--clr-neutral-6) inset;
 }
 
 .active-link {
   color: var(--clr-primary-1) !important;
+}
+
+/* the actual css */
+.section__title,
+.section__subtitle {
+  text-align: center;
 }
 
 .scroll-header {
@@ -298,22 +321,14 @@ textarea {
 
 .scrollup__icon {
   font-size: var(--fs-700);
-  color: var(--clr-neutral-5);
+  color: var(--clr-neutral-6);
 }
 
 .show-scroll {
   bottom: 5rem;
 }
 
-/* the actual css */
-
-.section__title,
-.section__subtitle {
-  text-align: center;
-}
-
 /* header */
-
 .nav__toggle {
   font-size: var(--fs-500);
 }
@@ -329,7 +344,9 @@ textarea {
 .nav__toggle:hover,
 .nav__toggle:focus-visible,
 .nav__link:hover,
-.nav__link:focus-visible {
+.nav__link:focus-visible,
+.change-theme:hover,
+.change-theme:focus-visible {
   color: var(--clr-primary-1);
   cursor: pointer;
 }
@@ -382,6 +399,20 @@ textarea {
 
 .show-menu {
   bottom: 0;
+}
+
+/* dark theme */
+.nav__btns {
+  display: flex;
+  align-items: center;
+}
+
+.change-theme {
+  font-size: var(--fs-500);
+  color: var(--clr-title);
+  font-weight: var(--fw-medium);
+  margin-right: var(--mb-1);
+  cursor: pointer;
 }
 
 /* home */
@@ -881,6 +912,10 @@ textarea {
   outline: none;
 }
 
+.swiper-pagination-bullet[aria-current='false'] {
+  background-color: var(--clr-neutral-6);
+}
+
 /* project */
 .project {
   text-align: center;
@@ -919,7 +954,7 @@ textarea {
 
 .project__title,
 .project__description {
-  color: var(--clr-neutral-5);
+  color: var(--clr-neutral-6);
 }
 
 .project__img {
@@ -927,7 +962,7 @@ textarea {
   justify-self: center;
   margin-bottom: var(--mb-3);
   border-radius: 100vw;
-  border: 2px solid var(--clr-neutral-5);
+  border: 2px solid var(--clr-neutral-6);
 }
 
 /* testimonials */
@@ -1078,7 +1113,7 @@ textarea {
 .footer__copy {
   font-size: var(--fs-300);
   text-align: center;
-  color: var(--clr-neutral-5);
+  color: var(--clr-neutral-6);
   margin-top: var(--mb-3);
 }
 
@@ -1086,12 +1121,14 @@ textarea {
 .footer__subtitle,
 .footer__link,
 .footer__social {
-  color: var(--clr-neutral-5);
+  color: var(--clr-neutral-6);
 }
 
 footer .fa-heart {
   color: crimson;
 }
+
+/* scroll bar */
 
 /* keyframes */
 @keyframes jumpingArrow {
